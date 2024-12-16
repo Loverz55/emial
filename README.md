@@ -31,72 +31,72 @@
 ### 安装和运行
 #### 前端
 ```bash
-安装依赖
+# 安装依赖
 cd frontend
 npm install
-开发环境运行
+
+# 开发环境运行
 npm run dev
-生产环境构建
+
+# 生产环境构建
 npm run build
 ```
 
 #### 后端
 ```bash
-进入后端目录
+# 进入后端目录
 cd backend
-使用Maven编译打包
+
+# 使用Maven编译打包
 mvn clean package
-运行应用
+
+# 运行应用
 java -jar target/项目名称-0.0.1-SNAPSHOT.jar
 ```
 
-
 ## 项目结构
-
-├── frontend/ # 前端项目目录
-│ ├── src/
-│ │ ├── assets/ # 静态资源
-│ │ ├── components/ # Vue组件
-│ │ ├── views/ # 页面视图
-│ │ ├── router/ # 路由配置
-│ │ ├── store/ # 状态管理
-│ │ └── main.js # 应用入口
-│ └── package.json
+```
+.
+├── frontend/                # 前端项目目录
+│   ├── src/
+│   │   ├── assets/         # 静态资源
+│   │   ├── components/     # Vue组件
+│   │   ├── views/          # 页面视图
+│   │   ├── router/         # 路由配置
+│   │   ├── store/          # 状态管理
+│   │   └── main.js         # 应用入口
+│   └── package.json
 │
-├── backend/ # 后端项目目录
-│ ├── src/
-│ │ ├── main/
-│ │ │ ├── java/ # Java源代码
-│ │ │ └── resources/ # 配置文件
-│ │ └── test/ # 测试代码
-│ └── pom.xml # Maven配置文件
+├── backend/                 # 后端项目目录
+│   ├── src/
+│   │   ├── main/
+│   │   │   ├── java/      # Java源代码
+│   │   │   └── resources/ # 配置文件
+│   │   └── test/          # 测试代码
+│   └── pom.xml            # Maven配置文件
 │
 └── README.md
-
-
+```
 
 ## 环境配置
 ### 后端配置
 1. 创建MySQL数据库
-
 ```sql
 CREATE DATABASE your_database_name;
 ```
 
-
 2. 修改后端配置文件 `backend/src/main/resources/application.yml`：
-
 ```yaml
 spring:
-datasource:
-url: jdbc:mysql://localhost:3306/your_database_name
-username: your_username
-password: your_password
-redis:
-host: localhost
-port: 6379
+  datasource:
+    url: jdbc:mysql://localhost:3306/your_database_name
+    username: your_username
+    password: your_password
+  
+  redis:
+    host: localhost
+    port: 6379
 ```
-
 
 ## API文档
 后端API文档访问地址：`http://localhost:8080/swagger-ui.html`
